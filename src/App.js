@@ -1,27 +1,27 @@
-import React from 'react';
-import JssProvider from 'react-jss/lib/JssProvider';
-import { create } from 'jss';
-import { MuiThemeProvider, createGenerateClassName, jssPreset } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from "@material-ui/core/CssBaseline";
+import React from 'react'
+import JssProvider from 'react-jss/lib/JssProvider'
+import { create } from 'jss'
+import { MuiThemeProvider, createGenerateClassName, jssPreset } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
-const generateClassName = createGenerateClassName();
+const generateClassName = createGenerateClassName()
 const jss = create({
-  ...jssPreset(),
-  // We define a custom insertion point that JSS will look for injecting the styles in the DOM.
-  insertionPoint: document.getElementById('jss-insertion-point'),
-});
+	...jssPreset(),
+	// We define a custom insertion point that JSS will look for injecting the styles in the DOM.
+	insertionPoint: document.getElementById('jss-insertion-point'),
+})
 
-const theme = createMuiTheme();
+const theme = createMuiTheme()
 
 function App() {
-  return (
-    <JssProvider jss={jss} generateClassName={generateClassName}>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-      </MuiThemeProvider>
-    </JssProvider>
-  );
+	return (
+		<JssProvider jss={jss} generateClassName={generateClassName}>
+			<MuiThemeProvider theme={theme}>
+				<CssBaseline />
+			</MuiThemeProvider>
+		</JssProvider>
+	)
 }
 
-export default App;
+export default App
